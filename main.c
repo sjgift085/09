@@ -1,43 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define ROWS 3
-#define COLS 3
+#define SIZE 5
 
-void addMatrix(int A[][COLS], int B[][COLS], int C[][COLS])
+int main(int argc, char *argv[])
 {
- 		 int i, j;
- 		 
- 		 for(i = 0; i<ROWS; i++){
-			 for (j = 0; j<COLS; j++){
-			 		 C[i][j] = A[i][j] + B[i][j];}
-					 }
-     
-}
+ int i;
+ int a[SIZE] = {1,2,3,4,5};
+ int b[SIZE] = {1,2,3,4,5};
+ int flag_same = 1;
 
-void printMatrix(int A[][COLS]){
-		 int i,j;
-		 
- 		 for(i = 0; i<ROWS; i++){
-			 for (j = 0; j<COLS; j++){
-			 		 printf("%d ", A[i][j]);}
- 		 printf("\n");
-					 }
-}
-
-
-int main(void)
-{
- 		int A[ROWS][COLS] = {
-				{2,3,0}, {8,9,1}, {7,0,5}
-				};
-    int B[ROWS][COLS] = {
-				{1,0,0}, {0,1,0}, {0,0,1}
-				};
-    int C[ROWS][COLS];
+ for(i=0; i<SIZE; i++){
+  if(a[i] != b[i]){
+		printf("a의 %d번째 값은 %d, b의 %d번 째 값은 %d 입니다.", i, a[i], i, b[i]);
+		flag_same = 0;}
+ }
+ 
+ if(flag_same == 1)
+	printf("배열은 같은 값을 가집니다.\n"); 
     
-    addMatrix(A,B,C);
-    printMatrix(C);
-    
-    system("PAUSE");
-    return 0;
+    /*if(a==b)
+		  printf("배열은 같은 값을 가집니다.\n");
+		else
+		  printf("배열은 다른 값을 가집니다.\n"); */
+
+ system("PAUSE");	
+ return 0;
 }
